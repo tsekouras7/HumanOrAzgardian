@@ -1,3 +1,21 @@
+//Askisi•Gia N plithos anthropon i exogiinon.
+// Arxika o xristis tha epilegei an einai apo tin Gi i apo tin Azgard.
+// Stin synexeia tha eisagei to onoma kai i ilikia tou.
+// Telos tha emfanizei poios (to onoma) einai o megalyteros
+// kai poios o mikroteros se ilikia anthropos
+// kai poios einai mikroteros/megalyteros se ilikia exogiinos.
+//px
+//Gi
+//Mikroteros: THanasis 5
+// Megalyteros: Kostas 99
+//Azgard
+//Mikroteros: Fhaleen-456
+//Megalyteros: Krashnak654
+//•Na elegxontai oi times ilikias:
+//–An einai exogiinos den exei periorismo giati zei se astrika xronia (oti na nai)
+// kai mporei na balei oti timi thelei, arnitiki i thetiki
+//–Eno an anthropos mporei na dosei apo 1 –100 xronia
+
 program HumanOrAzgardianProgram;
 
 var

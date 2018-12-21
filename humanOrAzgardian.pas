@@ -78,6 +78,7 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
           // if human
           if race=1 then 
           begin
+          h_Counter:=h_Counter+1;
               writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
               writeln('give human ',h_Counter,' name:');
               readln(h_Name);
@@ -100,15 +101,15 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
                          writeln('');
                     end; //end if human age 1 to 100
               end;//age_Check
-              //sthn paraktw if elegxoume ean einai o prwtos human pou eishgage o xrhsths(dhladh an to human counter einai 0), kai dinoume to onoma kai thn hlikia san max kai san min
-              if h_Counter=0 then
+              //sthn paraktw if elegxoume ean einai o prwtos human pou eishgage o xrhsths(dhladh an to human counter einai 1), kai dinoume to onoma kai thn hlikia san max kai san min
+              if h_Counter=1 then
               begin
                    h_Age_Min:=h_Age;
                    h_Name_Min:=h_Name;
                    h_Age_Max:=h_Age;
                    h_Name_Max:=h_Name;
-              end // end if h_Counter is 0
-              else // else if h_Counter not 0
+              end // end if h_Counter is 1
+              else // else if h_Counter not 1
               begin
                    if h_Age<h_Age_Min then
                    begin
@@ -120,12 +121,12 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
                               h_Age_Max:=h_Age;
                               h_Name_Max:=h_Name;
                    end;
-                   h_Counter:=h_Counter+1
               end //end if  h_counter
 
          end //end if human
          else //else if azgardian
          begin
+              azg_Counter:=azg_Counter+1;
               writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
               writeln('give azgardian ',azg_Counter,' name:');
               readln(azg_Name);
@@ -135,15 +136,15 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
               readln(azg_Age);
               writeln('');
 
-               // if azgardians are 0 so this is the first azgardian that we get, then set name and age as max and min
-              if azg_Counter=0 then
+               // if azgardians are 1 so this is the first azgardian that we get, then set name and age as max and min
+              if azg_Counter=1 then
               begin
                    azg_Age_Min:=azg_Age;
                    azg_Name_Min:=azg_Name;
                    azg_Age_Max:=azg_Age;
                    azg_Name_Max:=azg_Name;
-              end // end if azg_Counter = 0
-              else //if azg_Counter not 0
+              end // end if azg_Counter = 1
+              else //if azg_Counter not 1
               begin
                    // if age is lower than min, set name and age as min
                    if azg_Age<azg_Age_Min then
@@ -157,7 +158,7 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
                               azg_Age_Max:=azg_Age;
                               azg_Name_Max:=azg_Name;
                          end;//end if age more than max
-              end; //end azg_Counter is 0 or not 0
+              end; //end azg_Counter is 1 or not 1
 
 
          end;//end if azgardian

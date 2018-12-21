@@ -22,7 +22,8 @@ var
 
 h_Name_Max,h_Name_Min,azg_Name_Max,azg_Name_Min,h_Name,azg_Name,stolisma:string;
 
-h_Age_Max,h_Age_Min,azg_Age_Max,azg_Age_Min,h_Counter,azg_Counter,n,i,h_Age,azg_Age,race:integer;
+h_Age_Max,h_Age_Min,h_Counter,azg_Counter,n,i,h_Age,race:integer;
+azg_Age_Max,azg_Age_Min,azg_Age:real;
 
 age_Check,race_Check:boolean;
 
@@ -132,7 +133,7 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
               readln(azg_Name);
               writeln('');
               writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
-              writeln('give age of azgardian',azg_Name,':');
+              writeln('give age of azgardian ',azg_Name,':');
               readln(azg_Age);
               writeln('');
 
@@ -174,8 +175,8 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
      writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
      writeln('azgardians stats:');
      writeln('');
-     writeln('oldest azgardian is ',azg_Name_Max,', at age ',azg_Age_Max);
-     writeln('younger human is ',azg_Name_Min,', at age ',azg_Age_Min);
+     writeln('oldest azgardian is ',azg_Name_Max,', at age ',azg_Age_Max:20:1);
+     writeln('younger human is ',azg_Name_Min,', at age ',azg_Age_Min:20:1);
      writeln('');
      writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
      readln;

@@ -14,9 +14,9 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
 
      n:=3; //synolo atomwn pou zhtame apo ton xrhsth p.x. n atoma eite human eite azgardian
 
-     h_Counter:=1; // human counter dhladh posoi human
+     h_Counter:=0; // human counter dhladh posoi human
 
-     azg_Counter:=1; // azgardian counter dhaldh posoi azgardians
+     azg_Counter:=0; // azgardian counter dhaldh posoi azgardians
 
      //afth h for kanei mia loupa (epanalhpsh) opou mesa zhtame ni fores na mas dwsei input xrhsths
      for i:=1 to n do
@@ -57,9 +57,10 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
                     writeln('');
                end;  //if race is 1 or 2
           end; //while race input Check is false
-          if race=1 then
+          // if human
+          if race=1 then 
           begin
-               writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
+              writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
               writeln('give human ',h_Counter,' name:');
               readln(h_Name);
               writeln('');
@@ -67,41 +68,42 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
               writeln('give age of human ',h_Name,':');
               readln(h_Age);
               writeln('');
-              age_Check:=false;
-              while age_Check=false do
+              age_Check:=false; // 8etoume to flag elegxou swsths hlikias se la8os gia na treksei mia fora h parakatw while
+              while age_Check=false do //oso den mas exei dwsei swsth hlikia gia ton human trexei ksana to programa
               begin
                     if ((h_Age>0) and (h_Age<=100))
                     then
-                    age_Check:=true
+                    age_Check:=true // ean swsth hlikia input tote to flag ginete swsto etsi wste na bgei apo thn while
                     else // wrong human age input
                     begin
                          writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
                          writeln('your human age input is incorrect,',#13#10,'please input an integer from 1 to 100 and press enter:');
                          readln(h_Age);
                          writeln('');
-                    end; //if human age 1 to 100
+                    end; //end if human age 1 to 100
               end;//age_Check
-              if h_Counter=1 then
+              //sthn paraktw if elegxoume ean einai o prwtos human pou eishgage o xrhsths(dhladh an to human counter einai 0), kai dinoume to onoma kai thn hlikia san max kai san min
+              if h_Counter=0 then
               begin
-                   h_Counter:=2;
                    h_Age_Min:=h_Age;
                    h_Name_Min:=h_Name;
                    h_Age_Max:=h_Age;
                    h_Name_Max:=h_Name;
-              end
-              else
+              end // end if h_Counter is 0
+              else // else if h_Counter not 0
               begin
                    if h_Age<h_Age_Min then
-                      begin
+                   begin
                            h_Age_Min:=h_Age;
                            h_Name_Min:=h_Name;
-                      end
-                    else if h_Age>h_Age_Max then
-                         begin
+                   end
+                   else if h_Age>h_Age_Max then
+                   begin
                               h_Age_Max:=h_Age;
                               h_Name_Max:=h_Name;
-                         end;
-              end //end h_counter
+                   end;
+                   h_Counter:=h_Counter+1
+              end //end if  h_counter
 
          end //end if human
          else //else if azgardian
@@ -115,31 +117,35 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
               readln(azg_Age);
               writeln('');
 
-              if azg_Counter=1 then
+               // if azgardians are 0 so this is the first azgardian that we get, then set name and age as max and min
+              if azg_Counter=0 then
               begin
-                   azg_Counter:=2;
                    azg_Age_Min:=azg_Age;
                    azg_Name_Min:=azg_Name;
                    azg_Age_Max:=azg_Age;
                    azg_Name_Max:=azg_Name;
-              end
-              else //if azg_Counter not 1
+              end // end if azg_Counter = 0
+              else //if azg_Counter not 0
               begin
+                   // if age is lower than min, set name and age as min
                    if azg_Age<azg_Age_Min then
                       begin
                            azg_Age_Min:=azg_Age;
                            azg_Name_Min:=azg_Name;
-                      end
+                      end //end if age lower than min
+                      // else if age more than max, set name and age max
                     else if azg_Age>azg_Age_Max then
                          begin
                               azg_Age_Max:=azg_Age;
                               azg_Name_Max:=azg_Name;
-                         end;
-              end; //end azg_Counter
+                         end;//end if age more than max
+              end; //end azg_Counter is 0 or not 0
 
 
          end;//end if azgardian
-     end;   // i
+     end;   // i dhladh epanalhpseis input.
+     
+     // edw einai to output mas
      writeln('  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ');
      writeln('humans stats:');
      writeln('');
@@ -155,4 +161,4 @@ stolisma:='  -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=- -=O#O=-  ';
      writeln(stolisma);   //stolizoume to output mas gia na einai eyanagnwsto
      readln;
 
-end. //program
+end. //end of program
